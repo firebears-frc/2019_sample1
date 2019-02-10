@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DMC60;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -19,6 +20,7 @@ public class Robot extends TimedRobot {
   private Joystick joystick;
   private Solenoid puncher;
   private DoubleSolenoid grabber;
+  private Compressor compressor;
 
   @Override
   public void robotInit() {
@@ -26,6 +28,8 @@ public class Robot extends TimedRobot {
     joystick = new Joystick(0);
     puncher = new Solenoid(2);
     grabber = new DoubleSolenoid(0, 1);
+    compressor = new Compressor();
+    compressor.start();
   }
 
   @Override
